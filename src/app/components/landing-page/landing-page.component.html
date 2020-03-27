@@ -1,0 +1,332 @@
+<header class="default-header">
+    <div class="container">
+        <div class="header-wrap">
+            <div class="header-top d-flex justify-content-between align-items-center">
+                <div class="logo">
+                    <a (click)="onClick('home')"><img style="height: 80px;" src="../../assets/img/logo.png"
+                            alt="logo"></a>
+                </div>
+                <div class="main-menubar d-flex align-items-center">
+                    <nav style="text-align: center;" class="hide">
+                        <a (click)="onClick('home')">Accueil</a>
+                        <a (click)="onClick('about')">L'Association</a>
+                        <a (click)="onClick('signaler')">Signaler une Violation</a>
+                        <a (click)="onClick('donate')">Faire un don</a>
+                    </nav>
+                    <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End Header Area -->
+
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row fullscreen align-items-center justify-content-start" style="height: 915px;">
+            <div class="banner-content col-lg-9 col-md-12">
+                <h3 class="text-white">L'Association Tounes Bensaha‎,
+                    en association avec <u><strong>l'ATEC </strong></u>et l"association <u><strong>Femme &
+                            Leadership</strong></u> lance une campagne sociale en raison de la pandémie du corona pour :
+                </h3>
+                <br>
+                <div><a (click)="onClick('signaler')" class="head-btn btn text-uppercase">
+                        Signaler une Violation</a> </div>
+                <br><br>
+                <div><a (click)="onClick('donate')" class="head-btn btn text-uppercase">
+                        Faire un don</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+
+<!-- Start project Area -->
+<section class="project-area section-gap" id="about">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-8 pb-80 header-text">
+                <h1>‎جمعية تونس بنساها <br> Association Tounes Bensaha‎</h1>
+                <br>
+                <h4>‎En collaboration avec : ‎</h4>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img style="height: 150px;" src="../../../assets/img/atec.png" alt="logo ATEC">
+                        </div>
+                        <div class="col">
+                            <img style="height: 150px;" src="../../../assets/img/fl.jpg" alt="logo Femme & Leadership">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End project Area -->
+<!-- Start donate Area -->
+<section class="donate-area relative section-gap" id="signaler">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-sm-12 pb-80 header-text text-center">
+                <h1>Signaler une Violation</h1>
+                <h1>التبليغ عن</h1>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 contact-left">
+                <div class="single-info text-white">
+                    <p>*les informations personnelles ne seront pas publiées <br> Ni utilisées pour d'autres fins que
+                        les dons
+                        pour le corona virus <br> Une fois la pandémie terminée, toutes les donnees seront détruites.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 contact-right">
+                <form [formGroup]="signForm" (ngSubmit)="submitSign()">
+                    <label class="text-white" for="">Type de Violation</label>
+                    <label class="text-white pull-right">نوع التبليغ</label>
+                    <br>
+                    <br>
+                    <div class="form-row">
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="Monopolistes"
+                                        formControlName="violation">Monopolistes <br> (محتكرون) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="Augmentation des prix"
+                                        formControlName="violation">Augmentation des prix <br> (زيادة السعر) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="Vente conditionnelle"
+                                        formControlName="violation">Vente conditionnelle <br> (بيع مشروط) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="Violation de l'auto-quarantaine"
+                                        formControlName="violation">Violation de l'auto-quarantaine <br> (انتهاك الحجر
+                                    الصحي الذاتي) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">L'Adresse de la Violation <label
+                                    class="text-white pull-right">عنوان التبليغ</label></label>
+
+                            <input type="text" formControlName="vadress" class="form-control" required>
+
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">Description de la Violation<label
+                                    class="text-white pull-right">وصف التبليغ</label></label>
+                            <textarea type="text" formControlName="vdesc" class="form-control" required
+                                rows="3"></textarea>
+
+
+                        </div>
+
+
+                        <div class="col-lg-12 d-flex justify-content-end send-btn">
+                            <button type="submit" class="btn primary-btn mt-20 text-uppercase">Envoyer</button>
+                        </div>
+
+                        <div class="alert-msg"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End donate Area -->
+
+<!-- Start volunteer Area -->
+<section class="volunteer-area section-gap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 pb-80 header-text text-center">
+                <h1>Contact utiles</h1>
+                <h4>
+                    Pour déclarer un cas d'infection,appelez le numéro vert <strong style="color: green;">80 10 19
+                        19</strong>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div style="text-align: center;" class="col">
+                <h5 style="color: red;">Sud</h5>
+                <p>190 <br>
+                    75.294.529</p>
+            </div>
+            <div style="text-align: center;" class="col">
+                <h5 style="color: red;">Centre-Ouest</h5>
+                <p>190 <br>
+                    76.217.608</p>
+                <p>76.217.915 <br>
+                    76.217.920</p>
+            </div>
+            <div style="text-align: center;" class="col">
+                <h5 style="color: red;">Centre-Est</h5>
+                <p>190 <br>
+                    73.369.090</p>
+                <p>73.369.393 <br>
+                    74.672.372</p>
+            </div>
+            <div style="text-align: center;" class="col">
+                <h5 style="color: red;">Nord-Ouest</h5>
+                <p>190 <br>
+                    78.613.213</p>
+            </div>
+            <div style="text-align: center;" class="col">
+                <h5 style="color: red;">Nord-Est</h5>
+                <p>190 <br>
+                    71.589.271</p>
+                <p>71.589.626 <br>
+                    71.589.596</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End volunteer Area -->
+
+
+<!-- Start donate Area -->
+<section class="donate-area relative section-gap" id="donate">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 col-sm-12 pb-80 header-text text-center">
+                <h1>Faire un don</h1>
+                <h1>تبرع</h1>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 contact-left">
+                <div class="single-info">
+                    <h4>
+                        Divisés également</h4>
+                </div>
+                <div class="single-info">
+                    <h4>
+                        Transparence</h4>
+                </div>
+                <div class="single-info">
+                    <h4>Confiance</h4>
+                </div>
+                <div class="single-info text-white">
+                    <p>*les informations personnelles ne seront pas publiées <br> Ni utilisées pour d'autres fins que
+                        les dons
+                        pour le corona virus <br> Une fois la pandémie terminée, toutes les donnees seront détruites.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 contact-right">
+                <form [formGroup]="donationForm" (ngSubmit)="submitDonation()">
+                    <label class="text-white" for="">Type de Don</label>
+                    <label class="text-white pull-right">نوع التبرع</label>
+                    <br>
+                    <br>
+                    <div class="form-row">
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="food" formControlName="donation">
+                                    Nourriture <br> (مواد غذائية) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="meds"
+                                        formControlName="donation">Médicaments <br> (أدوية) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="hyg"
+                                        formControlName="donation">Produit d'hygiène <br> (مواد تنظيف) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 d-flex flex-column form-group">
+                            <div class="custom-control custom-radio">
+                                <label class="text-white"><input type="radio" value="prot"
+                                        formControlName="donation">Produit de protection <br> (مواد حماية) </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">Nom et Prénom <label class="text-white pull-right">الإسم
+                                    واللقب</label></label>
+                            <input type="text" formControlName="fullName" class="form-control" required>
+
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">Votre Email <label class="text-white pull-right">بريدك
+                                    الإلكتروني</label></label>
+                            <input type="text" formControlName="email" class="form-control" required>
+
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">Votre Num <label
+                                    class="text-white pull-right">رقمك</label></label>
+                            <input type="text" formControlName="phone" class="form-control" required>
+
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">Votre Adresse <label
+                                    class="text-white pull-right">عنوانك</label></label>
+                            <input type="text" formControlName="adress" class="form-control" required>
+
+                        </div>
+                        <div class="col-lg-12 d-flex flex-column form-group">
+                            <label class="text-white" for="">Description du Don <label
+                                    class="text-white pull-right">التبرع</label></label>
+                            <textarea type="text" formControlName="desc" class="form-control" required
+                                rows="3"></textarea>
+
+
+                        </div>
+
+
+                        <div class="col-lg-12 d-flex justify-content-end send-btn">
+                            <button type="submit" class="btn primary-btn mt-20 text-uppercase">Envoyer</button>
+                        </div>
+
+                        <div class="alert-msg"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End donate Area -->
+
+
+<!-- start footer Area -->
+<footer class="footer-area section-gap">
+    <div class="container">
+        <div class="row d-flex flex-column justify-content-center">
+            <div class="footer-social">
+                <a><i class="fa fa-phone"></i> 55589639</a>
+                <a><i class="fa fa-at"></i> contunisbenseha@gmail.com</a>
+                <a
+                    href="https://www.facebook.com/tunisbenseha/?eid=ARAaVATHoNOA7_D61HH8LnHe_5BwW6c5x9t_sbP6XrAIJIWYpYE4xl9xswlBDyzUQ_8vC6CmTrHyxUhu&timeline_context_item_type=intro_card_work&timeline_context_item_source=100005852674944&fref=tag"><i
+                        class="fa fa-facebook-square"></i> Notre Page Facebook</a>
+            </div>
+            <p class="footer-text m-0">
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <strong>Association Tounes Bensaha 2020‎</strong>
+
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+    </div>
+</footer>
+<!-- By Oussema Sallemi -->

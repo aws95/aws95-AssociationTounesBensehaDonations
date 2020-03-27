@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Angular Simple Reactive Form</h1>
+    <form [formGroup]="myForm" novalidate (ngSubmit)="save()">
+  
+      <div class="form-group">
+        <label for="contry">Countries</label>
+        <select class="form-control" id="contry" formControlName="country">
+          <option *ngFor="let contry of countries" [value]="contry.id">{{contry.name}}</option>
+        </select>
+      </div>
+  
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
