@@ -1,13 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyD-J3C6C6BzpsdTNxUWL3U7GEg-_Y997sQ",
-    authDomain: "tba2020-a20dd.firebaseapp.com",
-    databaseURL: "https://tba2020-a20dd.firebaseio.com",
-    projectId: "tba2020-a20dd",
-    storageBucket: "tba2020-a20dd.appspot.com",
-    messagingSenderId: "11390554178",
-    appId: "1:11390554178:web:b60a9f9e25bc72b4921ddb",
-    measurementId: "G-RCZS2GRHGR"
+    apiKey: "AIzaSyBILdpQ4eq6tU6ACdH3q1MxTZz0uFZHz2c",
+    authDomain: "ahna-likom-50303.firebaseapp.com",
+    databaseURL: "https://ahna-likom-50303.firebaseio.com",
+    projectId: "ahna-likom-50303",
+    storageBucket: "ahna-likom-50303.appspot.com",
+    messagingSenderId: "905083595155",
+    appId: "1:905083595155:web:bb17d5b438e4c2fd1d2066"
   }
 };
